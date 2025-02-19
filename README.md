@@ -1,6 +1,13 @@
-# 4Days4Projects - Sistema de Finanças Pessoais
+# Sistema de Finanças Pessoais
 
-Este projeto foi desenvolvido como parte do desafio **4Days4Projects** da Pythonando, ministrado pelo professor Caio. O objetivo é criar um sistema de finanças pessoais usando Python e SQLModel.\*\*.
+Este projeto foi desenvolvido como parte do desafio **4Days4Projects** da Pythonando, ministrado pelo professor Caio. O objetivo é criar um sistema de finanças pessoais usando Python e SQLModel.
+
+## Tecnologias Utilizadas
+
+- **Python**: Linguagem de programação principal.
+- **SQLModel**: Biblioteca para interação com banco de dados.
+- **SQLite**: Banco de dados para armazenamento local.
+- **Matplotlib**: Biblioteca para geração de gráficos.
 
 ## Funcionalidades
 
