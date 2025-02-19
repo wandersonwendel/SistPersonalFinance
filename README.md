@@ -44,9 +44,11 @@ O projeto segue o padrão **MVT**, que é uma variação do padrão **MVC (Model
 ## Como Executar
 
 1. **Instalação das Dependências**:
-   ```bash
-   pip install sqlmodel matplotlib
-   ```
+
+```bash
+pip install sqlmodel matplotlib
+```
+
 2. **Execução do Projeto**:
 
 ```bash
