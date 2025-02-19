@@ -51,12 +51,16 @@ def movimentar_dinheiro(historico: Historico):
     statement = select(Conta).where(Conta.id == historico.conta_id)
     conta = session.exec(statement).first() 
 
-    if historico.tipo == Tipos.ENTRADA:
-      conta.saldo += historico.valor
+    #TODO: Validar se a conta está inativa, antes de movimentações
+    if conta.status == Status.INATIVO:
+      raise ValueError("Esta conta está INATIVA!")
     else:
-      if conta.saldo < historico.valor:
-        raise ValueError("Saldo insuficiente!")
-      conta.saldo -= historico.valor
+      if historico.tipo == Tipos.ENTRADA:
+        conta.saldo += historico.valor
+      else:
+        if conta.saldo < historico.valor:
+          raise ValueError("Saldo insuficiente!")
+        conta.saldo -= historico.valor
 
       session.add(historico)
       session.commit()
@@ -88,6 +92,7 @@ def criar_grafico_por_contas():
     contas = session.exec(statement).all()
 
     bancos = [i.banco.value for i in contas]
+
     total = [i.saldo for i in contas]
 
     plt.bar(bancos, total)
